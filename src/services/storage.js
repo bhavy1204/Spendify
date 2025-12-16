@@ -1,10 +1,9 @@
-const KEY = "finance_transactions";
+const KEY = "spendify_v1";
 
-export const getTransactions = () =>
-    JSON.parse(localStorage.getItem(KEY)) || [];
+export const getEntries = () => {
+    return JSON.parse(localStorage.getItem(KEY)) || [];
+};
 
-export const saveTransactions = (data) =>
-    localStorage.setItem(KEY, JSON.stringify(data));
-
-export const clearTransactions = () =>
-    localStorage.removeItem(KEY);
+export const saveEntries = (entries) => {
+    localStorage.setItem(KEY, JSON.stringify(entries));
+};
